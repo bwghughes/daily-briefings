@@ -16,13 +16,30 @@ else
     echo "⚠️  No AI briefing found for $DATE"
 fi
 
-# Copy DEX briefing (if exists)
-if [ -f "/tmp/dex-briefing.md" ]; then
+# Copy DEX briefing
+if [ -f "/Users/bhclbot77/Obsidian Vault/cilla/DEX Reports/$DATE.md" ]; then
+    cp "/Users/bhclbot77/Obsidian Vault/cilla/DEX Reports/$DATE.md" "dex/$DATE.md"
+    cp "/Users/bhclbot77/Obsidian Vault/cilla/DEX Reports/$DATE.md" "dex-briefing-latest.md"
+    echo "✅ DEX briefing published: $DATE"
+elif [ -f "/tmp/dex-briefing.md" ]; then
     cp "/tmp/dex-briefing.md" "dex/$DATE.md"
     cp "/tmp/dex-briefing.md" "dex-briefing-latest.md"
-    echo "✅ DEX briefing published: $DATE"
+    echo "✅ DEX briefing published: $DATE (from /tmp)"
 else
     echo "⚠️  No DEX briefing found for $DATE"
+fi
+
+# Copy EXO briefing
+if [ -f "/Users/bhclbot77/Obsidian Vault/cilla/EXO Reports/$DATE.md" ]; then
+    cp "/Users/bhclbot77/Obsidian Vault/cilla/EXO Reports/$DATE.md" "exo/$DATE.md"
+    cp "/Users/bhclbot77/Obsidian Vault/cilla/EXO Reports/$DATE.md" "exo-briefing-latest.md"
+    echo "✅ EXO briefing published: $DATE"
+elif [ -f "/tmp/exo-briefing.md" ]; then
+    cp "/tmp/exo-briefing.md" "exo/$DATE.md"
+    cp "/tmp/exo-briefing.md" "exo-briefing-latest.md"
+    echo "✅ EXO briefing published: $DATE (from /tmp)"
+else
+    echo "⚠️  No EXO briefing found for $DATE"
 fi
 
 # Git operations
