@@ -25,6 +25,17 @@ Daily Digital Experience Platform market intelligence.
 
 [View latest DEX briefing →](dex-briefing-latest.md) | [Archive →](dex/)
 
+## 🚀 EXO Labs Briefing
+
+Daily intelligence on distributed AI inference with EXO Labs.
+
+- Adoption stories (Mac Mini/Mac Studio clusters)
+- Technical developments (RDMA, tensor parallelism)
+- Community builds and use cases
+- GitHub activity and market signals
+
+[View latest EXO briefing →](exo-briefing-latest.md) | [Archive →](exo/)
+
 ---
 
 **Updated daily at 05:00 GMT+1**

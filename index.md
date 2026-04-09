@@ -41,6 +41,24 @@ Daily Digital Experience Platform market intelligence.
 
 ---
 
+## 🚀 EXO Labs Briefing
+
+Daily intelligence on distributed AI inference with EXO Labs (exo-explore/exo).
+
+**Coverage includes:**
+- Mac Mini/Mac Studio cluster adoption stories
+- Technical developments (RDMA, tensor parallelism, pipeline parallelism)
+- Community builds and use cases (Reddit, HN)
+- GitHub activity and issue tracker trends
+- Market signals and cost comparisons
+
+### Latest Briefings
+
+- [**Latest EXO Briefing →**](exo-briefing-latest.md)
+- [View EXO Archive →](exo/)
+
+---
+
 **Updated daily at 05:00 GMT+1**
 
 Repository: [github.com/bwghughes/daily-briefings](https://github.com/bwghughes/daily-briefings)
