@@ -1,160 +1,116 @@
-# 📊 DEX Market Daily Briefing — April 8, 2026
+# 📊 DEX Market Daily Briefing — 2026-04-09
 
-## 🍎 Mac & Apple Platform in Enterprise — MAJOR DEVELOPMENTS
+*Your daily pulse on the Digital Experience Platform market*
 
-### **Apple Business Platform Launch (Official Announcement)**
-Apple unveiled **Apple Business**, a unified platform consolidating Apple Business Connect, Apple Business Essentials, and Apple Business Manager into a single all-in-one solution launching **April 14, 2026** in 200+ countries.
+---
 
-**Key DEX-Relevant Features:**
-- **Built-in MDM** with Blueprints for rapid device setup
+## 🍎 Mac & Apple Platform in Enterprise
+
+### **Apple Launches "Apple Business" — All-In-One Platform**
+**The big story:** Apple announced [Apple Business](https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/), a unified platform consolidating Apple Business Manager, Apple Business Essentials, and Apple Business Connect. Available April 14 in 200+ countries.
+
+**Key features:**
+- **Built-in MDM** with Blueprints for quick deployment
 - **Managed Apple Accounts** with cryptographic separation of work/personal data
-- **Zero-touch deployment** when purchased through Apple or authorized resellers
-- **Admin API** for large-scale device, user, and MDM service data access
-- Integration with Google Workspace, Microsoft Entra ID for automated account creation
-- Custom roles and employee group management by function/team
+- **Zero-touch deployment** via Apple Authorized Resellers
+- **Admin API** for large-scale device, user, and audit management
+- **Free tier** includes device management (Business Essentials customers no longer charged monthly fees)
 
-**Enterprise Impact:** Free tier makes enterprise-grade MDM accessible to organizations of all sizes; replaces previous paid Business Essentials model (monthly fees ending April 14).
-
-**Source:** [Apple Newsroom](https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/)
+**Why it matters:** This dramatically lowers the barrier for SMBs to adopt enterprise-grade Apple device management while providing a cleaner, unified experience that complements existing MDM vendors like Jamf, Mosyle, and Microsoft Intune. For DEX vendors, this reinforces Apple's role as a first-class enterprise platform — especially for organizations prioritizing employee experience.
 
 ---
 
-### **Mac Hits 11% US Enterprise Market Share — Up 2.4 Points YoY**
-Omdia/Informa data shows Apple captured **11% of the US enterprise PC market in 2025**, up from 8.6% in 2024 — the biggest enterprise vendor story of the year.
+### **PocketMDM Brings Apple Device Management to Your Pocket**
+New iOS app [PocketMDM](https://9to5mac.com/2026/04/04/pocketmdm-puts-apple-device-management-in-your-pocket/) integrates with Apple Business Manager, Jamf Pro, and Microsoft Intune via native Apple Shortcuts. IT admins can now scan barcodes and assign devices directly from iPhone without returning to their desks.
 
-**Key Stats:**
-- **11.2% Mac growth** vs. 3.3% industry average
-- **16% overall market share** (all segments) in 2025
-- **15.7% share** in Q4 2025 alone
-- MacBook Air remains "Most Popular Notebook"
-
-**Enterprise DEX Context:**
-- Apple's **vertical integration** (own silicon, own OS) provides competitive structural advantage over Windows vendors reliant on third-party components
-- **Component cost crisis**: RAM/storage up 40-70% since early 2025, with further 60% increases predicted in Q1 2026
-- Apple allegedly buying memory at premium prices, securing supply and squeezing competitors
-- **MacBook Neo** ($599, available now) disrupting entry-level segment at precisely the moment Windows competitors face $90-$165 build cost increases
-
-**Analyst Take (Omdia):** "Apple's vertical integration gives it more levers than competitors reliant on third-party chips and Microsoft licensing." Windows devices comparable to MacBook Air expected to see price increases, making Mac even more competitive in enterprise procurement.
-
-**Source:** [Computerworld](https://www.computerworld.com/article/4154950/apples-mac-grabs-11-of-us-enterprise-market-share.html)
+**Security:** API tokens stored securely in Apple Keychain. Free tier available; PocketMDM Pro unlocks full automation for $2.99/mo or $49.99 lifetime.
 
 ---
 
-### **WWDC26 Announced — June 8-12**
-Apple confirmed its annual developer conference returns June 8-12, 2026 (online). Likely to include enterprise/IT management updates, DEX-relevant APIs, and Apple Intelligence advancements for business use cases.
+### **Apple + AI + Mobility: The New Enterprise Stack**
+[Team Computers](https://teamcomputers.com/blog/apple-ai-mobility-enterprise-technology-stack/) highlights the convergence of Apple devices, AI-powered tools, and mobile-first workforces as the modern enterprise technology stack. Key themes:
+- **Seamless workflows** across Mac, iPhone, iPad for hybrid work
+- **AI workloads** running efficiently on Apple Silicon
+- **Simplified IT management** via integrated device ecosystems
 
-**Source:** [Apple Newsroom](https://www.apple.com/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/)
-
----
-
-## 🏢 Vendor News & Updates
-
-### **ControlUp Launches Autonomous Endpoint Management (AEM) Platform**
-ControlUp rebranded its DEX offering as **ControlUp ONE**, positioning it as the "first Autonomous Endpoint Management (AEM) platform." Unifies 24/7 monitoring, remediation, DEX telemetry, and AI-powered support into a single screen.
-
-**Market Positioning:** Emphasizes autonomous operations vs. traditional reactive DEX monitoring; targets VDI/cloud workspace environments with real-time remediation capabilities.
-
-**Source:** [ControlUp](https://www.controlup.com/)
+**Apple's enterprise efficacy:** The Mac/iPad ecosystem continues to demonstrate superior employee experience by reducing friction in device deployment, enabling zero-touch provisioning, and maintaining security with cryptographic separation of work/personal data.
 
 ---
 
-### **ServiceNow 2026 Best Employee Experience Contest Winners Announced**
-ServiceNow unveiled top 10 EX contest winners (yesterday), showcasing enterprise DEX implementations across ServiceNow Employee Center Pro:
+## 🔐 Gartner & Industry Analysis
 
-**Notable Deployments:**
-- **Siemens:** 250k employees, 143 countries, 5 languages; **94% service requests fully automated**, 1.7M monthly interactions
-- **Keurig Dr Pepper:** AI resolver cuts HR case resolution from **2 days to 6 seconds**; 25% of HR agent time freed
-- **UCLA Health:** 88% satisfaction, 70% AI search deflection; custom roles for clinical/frontline managers
-- **Medtronic:** 100+ Moveworks custom use cases, 77% ticket deflection
-- **Stellantis:** 50% ticket reduction within **weeks** of go-live via Now Assist
+### **Tanium Named a Leader in 2026 Gartner Magic Quadrant for Endpoint Management Tools**
+[Tanium confirmed](https://finance.yahoo.com/sectors/technology/articles/tanium-named-top-50-cybersecurity-135100870.html) recognition in the 2026 Gartner Magic Quadrant for Endpoint Management Tools. The company also earned Top 50 Cybersecurity Technology Provider status from Everest Group.
 
-**Trend:** AI-first, action-oriented employee experiences replacing traditional portal-centric models. Emphasis on autonomous resolution over information surfacing.
-
-**Source:** [ServiceNow Community](https://www.servicenow.com/community/employee-center-blog/uncovering-the-secrets-of-the-2026-best-employee-experience/ba-p/3520307)
+**Context:** Gartner MQ positioning validates Tanium's convergence of endpoint management, security operations, and exposure management in a single platform — a key trend in the DEX/AEM space.
 
 ---
 
-### **Riverbed Aternity: Prevention-First DEX Approach**
-Riverbed updated its "Zero Disruption" positioning around Aternity, emphasizing **prevention-first** DEX vs. reactive monitoring. Aternity intelligence layer designed for autonomous operations; strong focus on business application performance (SAP, Oracle, Salesforce).
+## 🚀 Vendor News & Updates
 
-**Differentiation:** Application experience management depth vs. device-centric competitors; particularly relevant for ERP-heavy enterprises.
+### **Tanium Unveils Autonomous IT Innovations at RSAC 2026**
+Major announcements from [Tanium](https://www.cloudcomputing-news.net/news/tanium-introduces-autonomy-driven-by-ai-and-security-innovation/):
 
-**Source:** [Riverbed](https://www.riverbed.com/zero-disruption/)
+- **Tanium Guardian:** AI governance tool providing real-time visibility into AI apps (ChatGPT, local LLMs, hidden model files) across Windows, macOS, Linux endpoints. One-click dashboards for rapid investigation.
+
+- **Tanium AI Enrichment & Analysis:** Accelerates security operations with real-time endpoint intelligence. Suggests software updates and maps them to pre-planned workflows.
+
+- **Tanium Exposure Management:** Fixes vulnerabilities immediately from risk ranking view. Closes the remediation loop at speed and scale.
+
+- **OT Environment Expansion:** Endpoint management now extends to operational technology (HMIs, PLCs) for unified IT/industrial operations visibility.
+
+- **ServiceNow AI Agent:** Embedded in ServiceNow Now Assist to automate IT incident workflows with real-time endpoint intelligence.
+
+**Quote:** "Tanium is expanding what AI can deliver for security teams — turning real-time endpoint intelligence into governed, actionable outcomes at speed and scale." — Harman Kaur, SVP of Technology Strategy and AI
+
+**Analyst take:** "Tanium is making autonomous IT real... What Tanium is doing, bringing security operations, exposure management and endpoint management together on one platform, gives those autonomous abilities the context they need to work." — Gabe Knuth, Principal Analyst, Omdia
 
 ---
 
-### **Ivanti DEX Survey: 3,300+ IT Professionals & End Users**
-Ivanti released findings from survey of 3,300+ IT pros and end users on "obstacles to DEX success" — details not yet public, but signals renewed Ivanti focus on DEX research/thought leadership.
+### **Tanium Appoints Carol MacKinlay as Chief People Officer**
+[Tanium announced](https://finance.yahoo.com/sectors/technology/articles/tanium-appoints-carol-mackinlay-chief-150000408.html) Carol MacKinlay as new Chief People Officer as the company invests in global leadership, team members, and culture.
 
-**Source:** [Ivanti](https://www.ivanti.com/)
+---
+
+### **NinjaOne Confirmed as Leader in 2026 Gartner Magic Quadrant**
+[NinjaOne](https://www.ninjaone.com/press/voice-of-the-vendor-rsac-2026/) reinforced its Leader status in the 2026 Gartner Magic Quadrant for Endpoint Management Tools. The company also introduced **Real-Time Vulnerability Management** to close security gaps as part of its Unified IT Operations Platform.
+
+**Positioning:** NinjaOne unifies endpoint management, autonomous patching, backup, and remote access in a single console — serving 35,000+ customers in 140+ countries.
+
+---
+
+### **ControlUp Highlights Autonomous Endpoint Management (AEM)**
+[ControlUp](https://www.controlup.com/) continues to position ControlUp ONE as the first Autonomous Endpoint Management platform built on leading Digital Employee Experience software. Integrates 24/7 monitoring, remediation, DEX telemetry, and AI-powered support into a single screen.
+
+**Partnerships:** Works with Microsoft, Citrix, Omnissa, Amazon, ServiceNow, IGEL, Nerdio, Parallels, and Intel.
 
 ---
 
 ## 📈 Market Landscape & Trends
 
-### **Independent DEX Market Overview Published (Viewpoint Analysis)**
-Analyst firm Viewpoint Analysis published comprehensive 2026 DEX vendor landscape (April 5), categorizing market into three segments:
+### **Autonomous IT & AI-Driven DEX Are Accelerating**
+- **Omdia research:** "The 'Growing Role of AI in Endpoint Management' report shows **half of organizations are already using or piloting autonomous endpoint management**, with nearly all the rest planning to."
 
-**Pure-Play DEX Specialists:**
-- **Nexthink** (market leader): Deep endpoint telemetry, real-time experience scoring, automated remediation via Infinity platform; strong in financial services, healthcare, manufacturing
-- **Lakeside Software (SysTrack)**: VDI/endpoint telemetry depth; digital workplace analytics
-- **1E (Tachyon)**: Real-time device visibility, endpoint automation, remediation speed focus
-- **Riverbed Alluvio**: Unified endpoint/network/application observability; strong for remote/branch offices
+- **Key trend:** Convergence of security operations, exposure management, and endpoint management into unified platforms (Tanium, ControlUp, NinjaOne) to provide the context needed for autonomous capabilities.
 
-**IT Ops/UEM Platforms with DEX:**
-- **VMware Workspace ONE** (Broadcom): UEM + DEX module; experiencing licensing/support changes post-acquisition
-- **Microsoft Endpoint Analytics** (Intune): Accessible DEX within existing M365/Intune licensing
-- **ServiceNow Employee Experience**: Service-led vs. telemetry-led DEX
-- **Ivanti Neurons**: Comprehensive IT ops platform with AI-powered DEX
-
-**Emerging/Specialist:**
-- **Aternity** (Riverbed): Application experience management
-- **ControlUp**: Real-time VDI/cloud workspace monitoring
-
-**Key Market Prediction:** Gartner forecasts **50% of digital workplace leaders will have formal DEX strategy by 2026**, up from ~30% in 2024.
-
-**Source:** [Viewpoint Analysis](https://www.viewpointanalysis.com/post/digital-employee-experience-software-options-2026)
+- **Apple momentum:** Apple Business launch reinforces enterprise-grade device management for SMBs and integrates seamlessly with major DEX/MDM vendors.
 
 ---
 
-### **AI & Autonomous Remediation Emerges as Primary Differentiator**
-Industry consensus: Gap between platforms that *identify* issues vs. those that *resolve* them autonomously is widening. Autonomous remediation now the primary ROI justification for large device estates with limited IT headcount.
+### **Six Colors Launches 2026 Apple in the Enterprise Report Card Survey**
+[Six Colors](https://sixcolors.com/link/2026/04/seeking-entries-in-the-apple-in-the-enterprise-2026-report-card-survey/) is collecting feedback from IT professionals on how Apple is performing in large organizations (business, education, government). Annual survey since 2021.
 
-**Analyst Guidance:** "For organisations with large device estates and limited IT headcount, autonomous remediation is not a nice-to-have — it is the primary justification for the investment."
-
----
-
-### **HP Security Updates: TPM Guard Launched**
-HP introduced **HP TPM Guard** for PCs and printers, plus new LaserJet Pro 4000/4100 Series with security compliance and fleet-wide device management under HP Wolf Security Platform.
-
-**DEX Relevance:** Security-focused endpoint management overlapping with DEX monitoring/compliance requirements.
-
-**Source:** [Channel Post MEA](https://channelpostmea.com/2026/04/06/hp-boosts-pc-and-printer-security-with-launch-of-hp-tpm-guard/)
+**Watch this space:** Useful barometer for Apple's enterprise momentum and pain points.
 
 ---
 
-## 🔍 Gartner/Industry Analysis
+## 📅 What to Watch
 
-### **Revuze Included in 2026 Gartner Magic Quadrant for VoC Platforms**
-(Published yesterday) — Gartner released Voice of the Customer Magic Quadrant; Revuze positioned for agentic-AI business intelligence layer. While not DEX-specific, VoC platforms increasingly overlap with employee sentiment/experience measurement capabilities.
-
-**Source:** [PR Newswire](https://www.prnewswire.com/news-releases/revuze-included-in-the-2026-gartner-magic-quadrant-for-voice-of-the-customer-platforms-302734737.html)
-
----
-
-## 💡 Takeaways for Ben
-
-1. **Apple Business launch is a big deal** — free built-in MDM, zero-touch deployment, and cryptographic work/personal separation make Apple's enterprise DEX story significantly stronger as of April 14. This directly competes with Omnissa Workspace ONE and Microsoft Intune on cost.
-
-2. **Mac enterprise momentum is real** — 11% US enterprise share (up 2.4 points YoY) plus component crisis squeezing Windows competitors = continued Mac enterprise growth likely. MacBook Neo at $599 is disruptive timing.
-
-3. **Autonomous remediation is the new table stakes** — ServiceNow contest winners (6-second HR case resolution, 94% automation) show what's possible. Platforms without AI-driven auto-fix capabilities are falling behind fast.
-
-4. **ControlUp's AEM positioning** is interesting — "Autonomous Endpoint Management" framing shifts DEX from monitoring to autonomous operations. Watch for other vendors adopting similar language.
-
-5. **Apple + DEX vendor integration** will be key story in H2 2026 — how do Nexthink, Lakeside, ControlUp, Aternity, etc. integrate with Apple Business platform's Admin API? Expect partnership announcements around WWDC.
+- **Apple Business launches April 14** — expect adoption case studies from SMBs and MDM vendor positioning updates
+- **Gartner Magic Quadrant updates** across DEX, endpoint management, and security categories
+- **RSAC 2026 follow-up** — more vendor announcements from Tanium, ControlUp, and peers
+- **ServiceNow/Tanium AI Agent rollout** — watch for customer stories demonstrating autonomous IT incident resolution
 
 ---
 
-**Prepared:** April 8, 2026, 5:17 AM GMT  
-**Sources:** Apple, Computerworld/Omdia, ServiceNow, Viewpoint Analysis, Riverbed, ControlUp, Ivanti, HP
+*Briefing compiled 2026-04-09 by Cilla 💅 | Sources: Apple Newsroom, 9to5Mac, Tanium, ControlUp, NinjaOne, Omdia, Gartner, Six Colors*
