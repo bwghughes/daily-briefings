@@ -1,78 +1,111 @@
-# 🚀 EXO Labs Briefing — 2026-04-15
+# EXO Labs Daily Briefing — 2026-04-16
 
-> **EXO Labs** | Distributed AI inference for Apple Silicon & NVIDIA | [github.com/exo-explore/exo](https://github.com/exo-explore/exo) | 43.3K ⭐
+**Compiled by Cilla** | Source: web intelligence across GitHub, blog.exolabs.net, Hacker News, Reddit, Medium, tech press
 
 ---
 
 ## Overview
 
-EXO Labs is winding down its landmark **"12 Days of EXO"** content campaign (wrapping today, Day 12), which has showcased everything from running DeepSeek V3 671B on M4 Mac Mini clusters to a fully-fledged academic paper ([EXO Gym on arXiv](https://openreview.net/pdf?id=UZWikfTkZ6)) on low-bandwidth distributed training simulation. On the code side, **v1.0.69** landed March 27 with continuous batching (on by default), Qwen3.5 support, and M5 Pro/Max support — the most recent shipped release. The repo sits at 43.3K stars with active development (174 open issues).
+EXO Labs (exo-explore/exo) is an open-source distributed AI inference platform enabling frontier model deployment across Apple Silicon clusters (Mac Mini/Mac Studio) and NVIDIA hardware. The project has ~43.5K GitHub stars and is actively developed, with its most recent release (v1.0.69, March 27) shipping continuous batching, Qwen3.5 support, and M5 Pro/Max chip support. A major "12 Days of EXO" blog series is currently running, covering DeepSeek V3 671B on M4 Mac Mini clusters, transparent benchmarks, and trustworthy AI stack themes.
 
 ---
 
 ## Adoption Stories
 
-- **Mac Mini Cluster / Overcast Podcast Transcripts** — AppleInsider reported that a rack of **48 Mac minis** now powers Overcast's podcast transcription workload, leveraging Apple's on-device speech recognition. While not explicitly EXO, this validates the "cluster of consumer Macs for AI tasks" thesis that EXO embodies. [High confidence](https://forums.appleinsider.com/discussion/243969)
-- **Nvidia DGX Spark + Mac Studio Hybrid** — EXO Labs published benchmarks showing **4x faster LLM inference** by pairing an NVIDIA DGX Spark (prefill) with an M3 Ultra Mac Studio (decode) over 10GbE. HN discussion ([61 points](https://news.ycombinator.com/item?id=45611912)) highlighted prefill acceleration as the key win, with the DGX essentially functioning as an "AI eGPU." USB-C/TB5 networking confirmed working. [High confidence](https://exolabs.net)
-- **Two-Mac 80B Cluster** — A Medium walkthrough demonstrated turning two Macs into a free 80B AI cluster using EXO, specifically profiling Exo against vanilla MLX for distributed inference. [Med confidence](https://medium.com/@manjunath.shiva/i-turned-two-macs-into-an-80b-ai-cluster-for-free-exo-is-the-open-source-tool-youve-been-waiting-ffa14b8e8dc0)
-- **EXO as Enterprise Office AI** — A Saeree ERP guide covers building Apple Mac clusters for office AI workloads, positioning EXO as an enterprise inference option. [Low-Med confidence](https://www.grandlinux.com/en/blogs/apple-mac-cluster-ai.html)
-- **Local LLM Cautionary Tale** — MacAdmin Musings published a practical account of running local LLMs on spare Apple Silicon hardware, useful context for EXO deployment decisions. [Med confidence](https://macadminmusings.com/blog/2026/01/11/local-llms-on-spare-apple-silicon-a-cautionary-tale/)
+- **[High]** EXO blog is running a "12 Days of EXO" series documenting running **DeepSeek V3 671B on a cluster of M4 Mac Minis** — the most demanding open-weight model to date (~400GB+ memory requirement). Day 2 post covers the full experience. [blog.exolabs.net/day-2](https://blog.exolabs.net/day-2/)
+- **[High]** Virge.io published a detailed guide: **"Run 671B parameter models on a cluster of Mac Studios"** — practical walkthrough for real-world users wanting to deploy DeepSeek V3 at scale on Apple Silicon. [virge.io](https://www.virge.io/en/blog/exo-mac-studio-cluster-llm/)
+- **[High]** Data Science Collective (Medium): **"I Turned Two Macs Into an 80B AI Cluster for Free"** — March 2026 walkthrough by Manjunath Janardhan, covering setup, performance, and real-world use cases for home-lab enthusiasts. [medium.com/@manjunath.shiva](https://medium.com/@manjunath.shiva/i-turned-two-macs-into-an-80b-ai-cluster-for-free-exo-is-the-open-source-tool-youve-been-waiting-ffa14b8e8dc0)
+- **[Medium]** ToolHalla published **"EXO Framework: Run 70B+ Models Across Multiple GPUs"** — a comprehensive distributed inference guide, covering tensor parallelism vs. pipeline parallelism trade-offs, targeting NVIDIA and Apple Silicon setups. [toolhalla.ai](https://toolhalla.ai/blog/exo-framework-distributed-inference-guide-2026)
+- **[Medium]** DEV Community (March 29, 2026): **"Local LLM Inference in 2026: The Complete Guide"** dedicates a major section to EXO as a top-tier tool for distributed inference on consumer hardware. [dev.to/starmorph](https://dev.to/starmorph/local-llm-inference-in-2026-the-complete-guide-to-tools-hardware-open-weight-models-2iho)
+- **[Med]** r/LocalLLaMA discussion: **"Best Coding-LLM to run locally on M4 Mac Mini (Feb 2026)"** — EXO referenced as a leading option for multi-GPU/Mac cluster setups for coding models.
 
 ---
 
 ## Technical Updates
 
-### GitHub Activity
+### GitHub Releases
 
-- **v1.0.69** (Mar 27) — Continuous batching on by default (multi-request parallel inference, agentic workflows), Qwen3.5 support, M5 Pro/Max support, M5 Pro/Max memory reporting fix (macmon upgrade), improved pipeline parallel prefill (up to **1.98x faster** on 2 nodes via chunked overlap), cancellation API (`POST /v1/cancel/{command_id}`), reasoning params in APIs, `--bootstrap-peers` / `--libp2p-port` for static peer discovery bypassing mDNS. [High confidence](https://github.com/exo-explore/exo/releases/tag/v1.0.69)
-- **v1.0.68** (Feb 25) — Biggest EXO release to date. Full Claude Messages API & OpenAI Responses API (enabling Claude Code), Ollama API compatibility, redesigned model picker, redesigned downloads page, prefill progress bar, onboarding flow, GLM 5 / MiniMax M2.5 / Step 3.5 Flash model support, log rotation, automatic model selection in dashboard. [High confidence](https://github.com/exo-explore/exo/releases/tag/v1.0.68)
-- **Latest commit** (Apr 5) — Fix for `reasoning_tokens` always reported as 0 for thinking models (#1836). [High confidence](https://github.com/exo-explore/exo/commits/main/)
-- **Open RDMA issue** — Kimi K2.5 RDMA loading timeout on two Mac Studios reported Apr 1 (Issue #1826), still open. [High confidence](https://github.com/exo-explore/exo/issues/1826)
+- **[High]** **v1.0.69** (March 27, 2026) — "biggest EXO release to date" (v1.0.68) followed by this shipping release:
+  - **Continuous batching** (on by default) — parallel request processing, dramatically higher throughput for agentic workflows; works on single-node and multi-node including RDMA
+  - **Qwen3.5 support** ([#1644](https://github.com/exo-explore/exo/pull/1644))
+  - **M5 Pro/Max chip support** (with macmon fix for memory/GPU stats reporting)
+  - **1.98x faster pipeline parallel prefill** on 2 nodes via chunked prompt splitting with overlapped computation/communication ([#1587](https://github.com/exo-explore/exo/pull/1587), [#1629](https://github.com/exo-explore/exo/pull/1629))
+  - **POST /v1/cancel/{command_id}** endpoint for cancelling generations
+  - **Repetition penalty and context size** params added
+  - **KV cache compression** issue ([#1850](https://github.com/exo-explore/exo/issues/1850)) still open — active development
+  - 35+ bug fixes across stability, RDMA, tool calling, prefix caching, and race conditions
 
-### Key Technical Developments from "12 Days of EXO"
+- **[High]** **v1.0.68** (February 25, 2026) — major stability release, addressed GPU lock/crash issues caused by `MLX_METAL_FAST_SYNCH` and loading state deadlocks:
+  - **Claude Messages API support** — enables Claude Code integration
+  - **OpenAI Responses API support**
+  - **Ollama API compatibility** ([#1560](https://github.com/exo-explore/exo/pull/1560))
+  - GLM-5 support added ([#1526](https://github.com/exo-explore/exo/pull/1526)), MiniMax M2.5 support
+  - Redesigned model picker modal, automatic model recommendations in web dashboard
+  - Image generation (experimental): FLUX.1-Kontext-dev support, parallel CFG for Qwen image models
+  - Fixes for RDMA/tensor parallel on various Mac configurations (Mac Minis, MacBooks, Mac Studios)
 
-- **EXO Gym** (Day 9) — Open-source simulation environment for low-bandwidth distributed training research. Runs DiLoCo and other algorithms on a single machine. Includes nanoGPT competition (4-node sim, winning solutions scaled to 8x M4 Mac Mini TB5 cluster + datacenter). Paper on arXiv. [High confidence](https://blog.exolabs.net/day-9/)
-- **Edge-Verified ML (evML)** (Day 10) — Novel protocol for verifiable decentralized training using Apple DeviceAttest / Android Play Integrity (TEE-based remote attestation) with ~5% overhead. No staking required. Targets crowdsourced compute networks. [High confidence](https://blog.exolabs.net/day-10/)
-- **Transparent Benchmarks** (Day 9) — EXO Gym framework for benchmarking distributed training methods. [High confidence](https://blog.exolabs.net/day-9/)
-- **Running DeepSeek V3 671B on M4 Mac Mini Cluster** (Day 2) — Biggest open-source model on Apple Silicon benchmark, part of the campaign showcase. [High confidence](https://blog.exolabs.net/day-2/)
+### Active GitHub Issues
 
-### RDMA & Performance
+- **[Med]** **#1850** — KV cache compression for distributed inference memory savings (open, active since April 7)
+- **[Med]** **#1459** — "No valid Tensor + RDMA configuration for 3 nodes" (open since Feb 12)
+- **[Low]** **#1825** — Custom/private models loading from local paths while staying online (open April 1)
+- **[Low]** **#1468** — GLM-5 support request (closed/completed in v1.0.68)
+- **[Low]** **#1015** — Node limit issue (>4 nodes for model instance launch) — closed as duplicate
 
-- RDMA stability fixes landed in v1.0.65/66/67/68 across multiple releases — Thunderbolt bridge cycle detection, port assignment, ethernet deprioritization, macmon fixes.
-- Pipeline parallel prefill now splits prompts into chunks overlapping compute + communication (1.98x speedup on 2-node setups).
-- M5 Pro/Max chips now supported (v1.0.69) with fixed macmon memory/GPU reporting.
+### Key Technical Developments
+
+- **Continuous Batching**: Default-on parallel request processing — particularly impactful for multi-agent workflows running concurrent inference
+- **Pipeline Parallel Prefill**: 1.98x speedup on 2-node setups achieved by chunking prompts and overlapping compute/communication
+- **Thunderstorm Bridge prioritisation**: Ring instances now prefer Thunderbolt connections for inter-node communication
+- **EXO_MODELS_PATH** env variable for loading models from arbitrary local paths
+- **Bootstrap peers & static peer discovery** (`--bootstrap-peers`, `--libp2p-port`) — bypasses mDNS for environments where mDNS is unavailable
 
 ---
 
 ## Community Pulse
 
-- **Hacker News** — The DGX Spark + Mac Studio hybrid benchmark post reached 61 points with substantive technical discussion on prefill vs. decode tradeoffs, USB-C/TB5 networking viability, and cost comparisons vs. datacenter GPUs. Commenters noted that EXO "going private" is apparently incorrect — active development continues. [High confidence](https://news.ycombinator.com/item?id=45611912)
-- **Reddit r/LocalLLaMA** — EXO referenced in local LLM inference guides as a recommended tool alongside Ollama and llama.cpp. Mac Studio/Mac Mini cluster setups discussed. [Med confidence](https://www.reddit.com/r/LocalLLaMA/)
-- **Discord** — EXO Discord referenced in blog posts for research channel; competitions and volunteer compute contributions being organized through it. [Med confidence]
-- **ToolHalla Guide** — Detailed walkthrough of running 70B+ models across multiple GPUs using EXO, covering tensor parallelism setup. [Med confidence](https://toolhalla.ai/blog/exo-framework-distributed-inference-guide-2026)
+- **Discord community** active; EXO team engages directly on GitHub issues and blog posts
+- **GitHub activity**: ~300 new stars since prior briefing period (43.2K → 43.5K); 3K forks; 174 open issues
+- **"12 Days of EXO" blog series**: Days 1–9 posted (as of latest), covering transparent benchmarks, DeepSeek V3 running, trustworthy AI stack, and distributed AI research (EXO Gym)
+  - Day 1: Transparent Benchmarks + automated benchmarking suite at benchmarks.exolabs.net
+  - Day 2: Running DeepSeek V3 671B on M4 Mac Mini Cluster
+  - Day 3: An Open, Trustworthy AI Stack
+  - Day 6: Texting Your AI Assistant
+  - Day 9: EXO Gym (distributed AI research acceleration)
+- **HN signal**: "Running DeepSeek V3 671B on M4 Mac Mini Cluster" posted on Hacker News (points visible on HN)
+- **Security note (Low)**: Immersive Labs published a security blog flagging an unauthenticated RCE in EXO — likely addressed in subsequent patches; users should ensure they're on latest version
 
 ---
 
 ## Market Signals
 
-- **VentureBeat** — Covered EXO Labs' M4 Mac support in November 2024; most recent AI coverage (Apr 8) focused on agent skill-rewriting frameworks from university researchers (not EXO-specific). [Low confidence](https://venturebeat.com/ai/you-can-now-run-the-most-powerful-open-source-ai-models-locally-on-mac-m4-computers-thanks-to-exo-labs)
-- **EXO Labs Blog** — "12 Days of EXO" is the primary content vehicle right now, with daily posts covering EXO Gym, evML, transparent benchmarks, DiLoCo training, and DeepSeek V3. Day 12 (today) is the final day. [High confidence](https://blog.exolabs.net/)
-- **DEV Community** — Local LLM inference 2026 guide references EXO alongside Ollama and llama.cpp as a recommended distributed inference option for Apple Silicon. [Med confidence](https://dev.to/starmorph/local-llm-inference-in-2026-the-complete-guide-to-tools-hardware-open-weight-models-2iho)
-- **ByteITa** — Feature article on EXO as a tool to run AI clusters on phones/laptops/smartwatches, framed as a counterpoint to hyperscaler data center buildouts. [Low confidence](https://byteiota.com/exo-run-ai-clusters-on-phones-laptops-smartwatches/)
+- **[Med]** **VentureBeat** (Nov 13, 2024 — older but still referenced): "You can now run the most powerful open source AI models locally on Mac M4 computers, thanks to Exo Labs" — still driving awareness in mainstream tech press
+- **[Low]** **GlobeNewsWire** (April 8, 2026): "ExolTM Launches U.S. Physical AI Facilities" — unrelated to EXO Labs (different company "Exol" / ExolTM); no connection to exo-explore/exo
+- **Trend**: Growing interest in local AI infrastructure as privacy concerns and per-token API costs drive enterprises and researchers to self-hosted Apple Silicon clusters
+- **Benchmark site**: [benchmarks.exolabs.net](https://benchmarks.exolabs.net/) — live transparent performance data for various LLM/hardware configurations
 
 ---
 
 ## Trends
 
-| Trend | Signal |
-|---|---|
-| **Hybrid Apple+NVIDIA inference** | DGX Spark as "AI eGPU" via EXO is a new, credible pattern — prefill on Blackwell, decode on Apple Silicon |
-| **Mac cluster adoption in production** | Overcast podcast transcription on 48-Mac-mini cluster validates real-world Apple Silicon cluster economics |
-| **Distributed training goes mainstream** | EXO Gym + evML suggest EXO Labs is expanding from inference to training coordination |
-| **evML / crowdsourced compute** | TEE-based verification without staking is a novel approach to decentralised training — watch for competitive response |
-| **M5 chip support** | Rapid adoption of newest Apple Silicon in EXO indicates close hardware partnership or fast hardware adaptation cycles |
-| **Continuous batching shipped** | Default-on batching is a meaningful throughput jump for multi-agent / production workloads |
+1. **Apple Silicon as AI inference platform**: M4 Mac Mini/Mac Studio clusters proving viable for 70B–671B parameter models — no longer just for small models
+2. **Continuous batching becoming default**: EXO's v1.0.69 makes parallel request handling the norm, not the exception
+3. **Distributed inference going mainstream**: DIY cluster guides proliferating; local AI hobbyist community rallying around EXO
+4. **M5 Pro/Max support**: Apple's latest chips now supported, extending cluster capabilities
+5. **KV cache compression**: Active area of development to reduce memory footprint in multi-node setups
+6. **Open-source inference competition**: Ollama, EXO, and llama.cpp all competing in local inference space; EXO differentiation is multi-node distributed inference
 
 ---
 
-*Generated 2026-04-15 03:58 UTC | Sources: GitHub, blog.exolabs.net, Hacker News, Reddit, Medium, VentureBeat, AppleInsider Forums*
+## Resources
+
+- **GitHub**: [github.com/exo-explore/exo](https://github.com/exo-explore/exo) (~43.5K stars)
+- **Blog**: [blog.exolabs.net](https://blog.exolabs.net)
+- **Benchmarks**: [benchmarks.exolabs.net](https://benchmarks.exolabs.net)
+- **Website**: [exolabs.net](https://www.exolabs.net)
+- **Discord**: [discord.gg/EUnjGpsmWw](https://discord.gg/EUnjGpsmWw)
+- **12 Days of EXO**: [blog.exolabs.net/day-1](https://blog.exolabs.net/day-1/) through [day-9](https://blog.exolabs.net/day-9/)
+
+---
+
+*Next briefing scheduled: 2026-04-17. Submit tips or requests via GitHub issues or Discord.*
