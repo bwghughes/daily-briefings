@@ -1,84 +1,124 @@
-# 📊 DEX Market Daily Briefing — 2026-04-16
+# 📊 DEX Market Briefing — 2026-04-17
 
-**Prepared by:** Cilla | **Coverage period:** 15–16 April 2026
-
----
-
-## 🏆 Top Story: Apple Launches All-in-One Apple Business Platform
-
-Apple dropped a significant enterprise play this week with the launch of **Apple Business**, a unified platform combining device management, business email, and customer engagement tools. Available **14 April 2026**, it replaces and consolidates several previous Apple business products into a single dashboard. For IT teams managing Mac, iPhone, and iPad fleets, this streamlines MDM workflows considerably — fewer silos, tighter integration, lower overhead. Zero-touch enrollment is central to the value prop.
-
-→ [Apple Newsroom announcement](https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/) | [MacRumors coverage](https://www.macrumors.com/2026/04/14/apple-business-platform-launches/)
+> *Digital Employee Experience Platform News | Friday, April 17, 2026*
 
 ---
 
-## 🔮 Gartner / Industry Analysis
+## 🔴 Big Story: Apple Business Launches — Unified Platform for Enterprise Device Management
 
-- **Eptura Named a Gartner Magic Quadrant Leader.** Eptura earned a spot as a Leader in the *2026 Gartner Magic Quadrant for Workplace Experience Applications* (published 6 April). The analyst firm highlighted Eptura's platform breadth across physical and digital workspace. Worth watching — Eptura is a darker-horse player that doesn't always get the same airtime as Nexthink or ServiceNow. [Source](https://eptura.com/gartner-magic-quadrant-workplace-experience-applications-2026)
+Apple officially launched its consolidated **Apple Business** platform on April 14, merging Apple Business Essentials, Apple Business Manager, and Apple Business Connect into a single, free (with optional paid add-ons) service available in 200+ countries.
 
-- **Gartner Digital Workplace Summit 2026 — London, 27–28 April.** The big industry event of the season is just under two weeks away. Agenda centres on AI in the digital workplace, autonomous IT, and DEX measurement Frameworks. HP is confirmed as an exhibitor (Booth #301). Expect a wave of announcements. [Source](https://www.gartner.com/en/conferences/emea/digital-workplace-uk)
+**Key features for DEX:**
+- **Zero-touch deployment** via "Blueprints" — preconfigure devices from Apple or authorized retailers with settings, apps, and policies before they reach employees
+- **Built-in MDM** for configuring device settings, security policies, app distribution, and user groups from one console
+- **Managed Apple Accounts** with cryptographic separation of personal and work data — employees use one device, not two
+- **Automated provisioning** integrates with Google Workspace and Microsoft Entra ID
+- **Integrated email, calendar, and directory** tied to custom domains
+- **Apple Business companion app** (requires iOS 26 / macOS 26) — employees install work apps, request support, and browse a company directory
 
-- **Flexxible Cites Gartner Report.** Flexxible published a blog this month positioning itself as a Gartner-validated leader in DEX. The piece walks through five reasons it leads per Gartner's framework — mostly around TCO and deployment speed. [Source](http://www.flexxible.com/en/blog/digital-employee-experience-gartner)
+This is Apple's most aggressive move into enterprise DEX territory yet. The zero-touch MDM story directly attacks the IT overhead pain point that DEX vendors like Nexthink, ControlUp, and Omnissa solve. Apple's native story strengthens the Mac in enterprise narrative significantly.
+
+**Source:** [MacRumors](https://www.macrumors.com/2026/04/14/apple-business-platform-launches/) | [Apple Newsroom](https://www.apple.com/newsroom/2026/03/introducing-apple-business-a-new-all-in-one-platform-for-businesses-of-all-sizes/)
 
 ---
 
-## 🏢 Vendor News & Updates
+## 🟠 Vendor News & Updates
 
-### Nexthink — Mobile DEX Expansion
-Nexthink shipped **Mobile Experience** support for Android and iOS this week (8 April), illuminating previously invisible pain points for mobile workers. The update extends DEX visibility to thedevice level across all OSes — a logical and necessary expansion as hybrid work makes mobile a first-class citizen. Combined with Nexthink Spark (which resolves ~77% of IT issues at first contact), the platform is building a compelling autonomous IT story. [Source](https://nexthink.com/press/nexthink-extends-dex-to-android-and-ios-with-mobile-experience)
+### Omnissa — State of Digital Workspace 2026 Report
+New Omnissa study exposes a stark paradox: **AI assistant usage grew ~1,000% year-over-year** while security gaps, device instability, and shadow IT continue to undermine IT observability. Key findings point to the need for end-to-end digital workspace visibility — Omnissa's core pitch as they compete with Nexthink and ControlUp in the DEX space.
 
-### ControlUp — Hits $100M ARR, Pivots to "Autonomous Endpoint Management"
-ControlUp crossed **$100M ARR** milestone (15 April) and is rebrand positioning itself around Autonomous Endpoint Management (AEM) rather than traditional DEX tooling. This is a notable semantic and strategic shift — AEM puts AI agents in direct control of remediation, not just measurement. Watch whether this framing resonates with enterprises tired of dashboards that don't fix things. [Source](https://markets.businessinsider.com/news/stocks/controlup-hits-100m-arr-pioneering-the-shift-from-digital-employee-experience-to-autonomous-endpoint-management-1036024817)
+- Report highlights: shadow AI proliferation, security gaps, Windows device instability
+- Omnissa continues to double down on integrations with ServiceNow ITSM
 
-### Tanium — AI-Driven Autonomy
-Tanium unveiled its **Autonomous IT Platform** driven by AI and security innovation (8 April). The pitch: autonomy as the natural endpoint of unified IT and security management. As with ControlUp, the market is consolidating around "autonomous" framing rather than passive monitoring. [Source](https://www.cloudcomputing-news.net/news/tanium-introduces-autonomy-driven-by-ai-and-security-innovation/)
+**Source:** [Omnissa State of Digital Workspace 2026](https://www.omnissa.com/state-of-digital-workspace/) | [Financial Content](https://markets.financialcontent.com/stocks/article/bizwire-2026-3-24-new-omnissa-2026-study-finds-shadow-ai-security-gaps-and-device-instability-expose-need-for-end-to-end-it-observability)
 
-### Omnissa — Shadow AI, Security Gaps, Device Instability
-Omnissa published its **2026 State of the Digital Workspace** study this week: AI assistant app usage grew nearly **1,000% year-over-year** — a staggering finding. The study also flagged widespread shadow AI, security gaps, and endpoint instability as the top risks enterprises face. The data makes a clear case for end-to-end IT observability, which is Omnissa's core pitch. [Source](https://www.omnissa.com/insights/Omnissa-State-of-Digital-Workspace-2026-press-release/)
+---
 
-### ServiceNow — Autonomous Workforce + Moveworks Integration
-ServiceNow formally launched its **Autonomous Workforce** platform, integrating the acquired Moveworks capabilities into the ServiceNow AI Platform. The pitch: AI "specialists" that execute work autonomously rather than just recommending actions. EmployeeWorks also launched as part of this wave. Enterprise readiness remains the key question — early impressions from diginomica are cautiously impressed. [Source](https://www.intelligentcio.com/me/2026/03/02/servicenow-launches-autonomous-workforce-that-thinks-and-acts-adds-moveworks-to-the-servicenow-ai-platform/)
+### ControlUp — $100M ARR Milestone
+ControlUp has surpassed **$100M in annual recurring revenue**, cementing its position as a major player in the DEX space. The company is positioning itself around "Autonomous Endpoint Management (AEM)" — essentially a next-gen evolution of DEX where AI drives automatic remediation before users even notice issues.
 
-### Riverbed / Aternity — Agentic AI Self-Service
-Riverbed continues to push its **Aternity Self-Service powered by Agentic AI** story (from October 2025 launch, still circulating in feeds). First agentic solution enabling employees to resolve IT issues autonomously — positioned as a differentiator vs. dashboards-and-tickets-only approaches. Riverbed also retains its Leader position in the 2025 Gartner DEX Magic Quadrant. [Source](https://www.riverbed.com/press-releases/riverbed-revolutionizes-dex-aternity-self-service-powered-agentic-ai/)
+This is a significant milestone showing the market is maturing beyond just visibility and into autonomous action.
 
-### HP Workforce Experience Platform — AI Enhancements
-HP announced new **AI-driven capabilities** to WXP at HP Imagine 2026 (late March), with expanded insights aimed at helping IT teams be more proactive. HP is also exhibiting and hosting demos at the Gartner London Summit (27–28 April). Notably, HP's 2025 DEX wrap research found only **20% of workers happy** — a stat that frames the urgency of the DEX market opportunity. [Source](https://hp.com/us-en/newsroom/blogs/2026/ai-driven-wxp-capabilities-and-integrated-insights.html)
+**Source:** [Markets Insider](https://markets.businessinsider.com/news/stocks/controlup-hits-100m-arr-pioneering-the-shift-from-digital-employee-experience-to-autonomous-endpoint-management-1036024817)
 
-### IGEL + Omnissa — Expanded Partnership
-IGEL expanded its partnership with Omnissa (31 March) to speed deployments, strengthen healthcare recovery, and integrate Digital Experience Insights. Healthcare remains a hot vertical for DEX given the high density of endpoints and clinical workflow sensitivity. [Source](https://www.globenewswire.com/news-release/2026/03/31/3265763/0/en/IGEL-Expands-its-Partnership-with-Omnissa-to-Speed-Deployments-Strengthen-Healthcare-Recovery-and-Integrate-Digital-Experience-Insights.html)
+---
+
+### Nexthink — v2026.3 Released (March 30)
+Nexthink Infinity Standard edition update 2026.3 landed at the end of March, continuing their rapid release cadence. No major new product announcements this week, but the platform continues to build out its AI-powered DEX capabilities. Full release notes available on the Nexthink docs portal.
+
+**Source:** [Nexthink What's New 2026.3](https://docs.nexthink.com/platform/whats-new/whats-new-2026.3)
+
+---
+
+### ServiceNow — AI-Native Platform Overhaul
+ServiceNow announced a comprehensive AI overhaul of its entire product line, introducing a **Context Engine** and open SDK ecosystem designed to break down data silos and give AI agents deep business context. This directly impacts the Employee Experience (DEX) modules on the Now Platform — smarter automation, contextual resolution, and tighter integration across IT workflows.
+
+The message: ServiceNow is no longer just a workflow engine — it's positioning itself as an AI-native enterprise platform with DEX as a core pillar.
+
+**Source:** [ServiceNow Press Release](https://servicenow.gcs-web.com/news-releases/news-release-details/servicenow-adds-powerful-new-solutions-now-platform-transform) | [至顶网 (Chinese)](https://ai.zhiding.cn/2026/0410/3183635.shtml)
+
+---
+
+### HP Workforce Experience Platform — Gartner Digital Workplace Summit (London, Booth #301)
+HP is actively participating in the **Gartner Digital Workplace Summit 2026 in London**. The summit runs soon — HP is showcasing WXP capabilities and AI-driven workforce experience improvements at Booth #301. This is a key event for HP to demonstrate the latest AI-driven WXP enhancements shown at HP Imagine 2026.
+
+Attendees can get hands-on with the platform and see how HP's endpoint management integrates with broader DEX workflows.
+
+**Source:** [HP WXP Gartner Summit Page](https://workforceexperience.hp.com/blog/gartner-digital-workplace-summit-2026-london/)
 
 ---
 
 ## 🍎 Mac & Apple Platform in Enterprise
 
-- **Apple Business Platform (see top story)** is the headline. The consolidation of device management under one roof directly reduces IT operational overhead for Apple-device fleets. For organisations already all-in on Apple, this makes the platform significantly more attractive. MDM via Apple Business is now a zero-touch, single-pane story.
+### Apple Business = Zero-Touch + MDM + Managed Apple Accounts
+This week's Apple Business launch is the strongest Apple enterprise story in recent memory. For organizations running Mac fleets:
 
-- **FleetDM published its Mac Zero-Touch Deployment: Complete Enterprise Guide 2026.** A comprehensive, updated guide coveringDEP/ASM configuration, MDM enrollment automation, and fleet-level visibility. Required reading for anyone managing Mac at scale. Key stat to cite: Macs have lower per-device support cost than comparable Windows fleets in many Forrester TEI studies — a point Apple has leaned into heavily. [Source](https://fleetdm.com/articles/mac-zero-touch-deployment-guide)
+- **Zero-touch deployment via Blueprints** eliminates manual setup entirely — devices ship from Apple pre-configured with policies, apps, and security settings
+- **MDM built in** means IT manages everything from a single console without third-party tools
+- **Managed Apple Accounts** enforce work/personal separation at the OS level — no MDM profile conflicts, no personal data mingling
+- **Entra ID and Google Workspace integration** means seamless automated provisioning in existing identity environments
 
-- **Forrester TEI of Mac in Enterprise.** The Total Economic Impact study continues to be a cornerstone reference for Apple-in-enterprise arguments — quantifying reduced support costs, lower incident rates, and improved employee satisfaction. Use it when making the business case internally. [Source](https://tei.forrester.com/go/apple/TEI/)
+This directly reduces IT overhead, improves employee time-to-productivity, and — critically — gives IT the visibility and control that DEX platforms like Nexthink and ControlUp need to deliver actionable insights.
 
-- **Apple Mac Adoption Blueprint (PDF).** Apple's own enterprise guidance document — covers device management, app compatibility, training, and launch strategies. Useful for rolling out Mac programs with minimal friction. [Source](https://www.apple.com/business/enterprise/docs/resources/Mac_Adoption_Blueprint.pdf)
+**For Mac-specific DEX:** Apple Business fills the device management gap that has historically made Mac look "harder to manage" in enterprise contexts. Combined with FleetDM or Jamf on top, the story is now genuinely compelling for IT decision-makers evaluating total cost of ownership.
+
+**Sources:** [MacRumors](https://www.macrumors.com/2026/04/14/apple-business-platform-launches/) | [Apple Business Enterprise](https://www.apple.com/business/enterprise/it/) | [FleetDM Zero-Touch Guide](https://fleetdm.com/articles/mac-zero-touch-deployment-guide)
+
+---
+
+### Tanium, Ivanti, Riverbed Aternity — Quiet Week
+No major news from these vendors this week. Riverbed/Aternity continues to operate in the Aternity DEX space following the Omnissa transition. Tanium and Ivanti remain active in endpoint management but haven't published DEX-specific news in the past 24 hours.
 
 ---
 
 ## 📈 Market Landscape & Trends
 
-| Trend | Signal |
+### DXP Market: $59.2B by 2035 at 16.3% CAGR
+The broader Digital Experience Platform (DXP) market continues its strong growth trajectory, with market size projected to reach **$59.2 billion by 2035** at a 16.3% CAGR. Note: DXP in this context includes customer-facing digital experience platforms (Adobe, Optimizely, etc.) — slightly different from the Digital *Employee* Experience market but the same underlying trend: organizations are prioritizing experience differentiation.
+
+**Source:** [GlobeNewswire](https://globenewswire.com/news-release/2026/02/09/3234928/0/en/Latest-Global-Digital-Experience-Platform-DXP-Market-Size-Share-Worth-USD-59-2-Billion-by-2035-at-a-16-3-CAGR-Custom-Market-Insights-Analysis-Outlook-Leaders-Report-Trends-Forecast.html)
+
+### Gartner: Magic Quadrants Active
+- **Gartner Magic Quadrant for Digital Experience Platforms** — Adobe maintains Leader position; Optimizely also recognized as a Leader in the Personalization Engines MQ (6x consecutive for DXP). The DEX space (employee-facing) MQ continues to be a key buying signal.
+- **Gartner Peer Insights "Best DEX Management Tools 2026"** — ControlUp prominently featured alongside Nexthink and Omnissa as top vendors.
+
+### Key Theme This Week: Shadow AI + Autonomous Remediation
+The Omnissa report crystallizes a major trend: **shadow AI is exploding in the enterprise** (1,000% YoY growth in AI assistant usage), and IT has no visibility into it. Combined with ControlUp's autonomous endpoint management positioning, the market is clearly heading toward AI-driven, self-healing endpoint environments. DEX tools are evolving from "what's my experience score?" to "fix it before I call IT."
+
+---
+
+## 🔗 Quick Links
+
+| Vendor | Link |
 |---|---|
-| **"Autonomous" replaces "DEX"** | ControlUp, Tanium, ServiceNow, and Riverbed are all rebranding around autonomy — the market is shifting from measurement to remediation |
-| **Mobile DEX goes mainstream** | Nexthink's mobile expansion signals that mobile-device workers are no longer a blind spot; visibility across all OSes is now table stakes |
-| **Shadow AI is the #1 IT fear** | Omnissa's 1,000% YoY AI app growth finding is the starkest illustration of how fast the AI landscape has changed — and how unprepared most IT orgs are |
-| **Gartner MQ season** | With Eptura's Leader designation and the Summit weeks away, the analyst narrative is consolidating around workplace experience platforms vs. narrow DEX tools |
-| **$100M ARR milestone** | ControlUp crossing nine figures validates the DEX/AEM category as a sustainable market, not just a buzzword |
+| Apple Business | [apple.com/business](https://www.apple.com/business/) |
+| Nexthink | [docs.nexthink.com](https://docs.nexthink.com) |
+| Omnissa | [omnissa.com](https://www.omnissa.com) |
+| ControlUp | [controlup.com](https://www.controlup.com) |
+| ServiceNow | [servicenow.com](https://servicenow.com) |
+| HP WXP | [workforceexperience.hp.com](https://workforceexperience.hp.com) |
+| Gartner DEX MQ | [gartner.com](https://www.gartner.com) |
 
 ---
 
-## 📅 Coming Up
-
-- **Gartner Digital Workplace Summit 2026** — London, 27–28 April. Two-day flagship event for DEX/IT leaders.
-- **Apple Business Platform general availability** — 14 April (already live)
-
----
-
-*Next briefing: 2026-04-17 | Have a story tip? Flag it for the daily run.*
+*Compiled by Cilla | Sources: web search (ollama) | 2026-04-17 05:01 UTC*
