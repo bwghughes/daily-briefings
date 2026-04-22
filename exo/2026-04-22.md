@@ -1,139 +1,108 @@
-# EXO Labs Briefing — 2026-04-21
+# EXO Labs Daily Briefing — 2026-04-22
 
-**43,864 GitHub stars | Latest: v1.0.70 (April 17, 2026) | 90 contributors**
-
----
-
-## Overview
-
-EXO Labs continues to push the boundaries of distributed AI inference on consumer hardware. This period's headline: **v1.0.70 brings multimodality and major memory optimizations**, while the team demonstrated a **DGX Spark + Mac Studio hybrid setup achieving 4x inference speedup**. The "12 Days of EXO" blog series continues with compelling adoption stories ranging from Mac Mini clusters to a Pentium II running Llama.
+> **Overview:** EXO Labs (exo-explore/exo, 43.3k stars) just wrapped a landmark "12 Days of EXO" content sprint. v1.0.69 shipped with continuous batching, Qwen3.5 support, and M5 Pro/Max support. A hybrid DGX Spark + Mac Studio setup demonstrated 2.8× inference speedup via disaggregated prefill/decode. A 48× Mac mini cluster is now powering Overcast podcast transcription. The project is approaching 44k GitHub stars.
 
 ---
 
-## Adoption Stories
+## 🚀 Adoption Stories
 
-**[High] DGX Spark + Mac Studio Hybrid Inference** — EXO Labs published benchmarks showing 4x faster LLM inference by combining NVIDIA DGX Spark (compute-heavy, 100 TFLOPs FP16) with Apple Mac Studio M3 Ultra (memory-bandwidth-heavy, 819 GB/s). The trick: disaggregated prefill/decode with layer-by-layer KV streaming over 10 GbE, overlapping KV transfer with compute. Llama-3.1 8B at 8k context: 2.32s total vs 6.42s on M3 Ultra alone. Coming to EXO 1.0 open source soon.
-📎 https://blog.exolabs.net/nvidia-dgx-spark/
+### [High] Overcast Runs 48-Mac Mini Cluster for Local Podcast Transcription
+Marco Arment (Overcast) deployed a rack of **48 M4 Mac minis** to power Overcast's new podcast transcription feature entirely on-device using Apple's speech recognition models. No cloud AI involved — cutting costs dramatically while keeping data private. Published April 7, 2026.
+- [AppleInsider](https://forums.appleinsider.com/discussion/243969) | [Headlines Briefing](https://headlinesbriefing.com/mobi/appleinsider/overcast-swaps-cloud-ai-for-48mac-mini-transcription-cluster-52501271) | [Curb Cuts Interview](https://www.curbcuts.co/blog/2026-4-10-hqs7rmsdifg87dy7ff1xjh4kyuidbs)
 
-**[High] DeepSeek V3 671B on 8× M4 Mac Mini Cluster** — EXO achieved TTFT of 2.91s and 5.37 TPS running the 671B MoE model on a cluster of 8× M4 Pro 64GB Mac Minis (512GB total). Surprisingly, DeepSeek V3 runs *faster* than Llama 70B on this setup, explained by MoE only activating ~37B params per token vs dense 70B.
-📎 https://blog.exolabs.net/day-2/
+### [High] Hybrid NVIDIA DGX Spark + Apple Mac Studio = 2.8× Speedup
+EXO Labs published benchmarks combining a **NVIDIA DGX Spark** (100 TFLOPs FP16, 128GB) with a **Mac Studio M3 Ultra** (512GB unified, 819 GB/s bandwidth) for disaggregated inference. The trick: prefill runs on DGX Spark (compute-bound), KV cache streams layer-by-layer to Mac Studio for decode (memory-bound), overlapping communication with compute. Result: **2.8× faster than Mac Studio alone**, 1.9× faster than DGX Spark alone. HN front page — 61 points.
+- [Blog post](https://blog.exolabs.net/nvidia-dgx-spark/) | [Hacker News](https://news.ycombinator.com/item?id=45611912)
 
-**[Med] 25-Year-Old Hardware Runs Llama** — EXO got a Llama 260K parameter model running on a Windows 98 Pentium II at 39 tokens/sec. Used Borland C++ 5.02 and Andrej Karpathy's llama2.c as a base, with custom tweaks. A proof-of-concept that frontier AI doesn't require datacenters.
-📎 https://blog.exolabs.net/day-4/
+### [Med] Apple Previews Thunderbolt 5 Mac Clusters for Trillion-Parameter AI
+Apple demonstrated clusters of Thunderbolt 5 Macs running trillion-parameter models in a developer preview — directly positioning against Nvidia's DGX family. EXO is well-positioned as the software layer for such clusters.
+- [PCMag](https://www.pcmag.com/news/apple-thunderbolt-5-macs-ai-clusters-mlx) | [FindArticles](https://www.findarticles.com/apple-previews-thunderbolt-5-macs-for-trillion-parameter-ai/)
 
-**[Med] Open Home Assistant Stack** — Day 3 of the blog series announced an open-source local AI assistant architecture: WhisperKit for voice recognition + Qwen2.5 with function calling + WebOS TV + Tapo smart plug integrations, all running via EXO Desktop app. Trigger phrase: "Hey EXO."
-📎 https://blog.exolabs.net/day-3/
-
-**[Med] Mac Studio M3 Ultra RDMA Cluster (Jeff Geerling)** — Popular YouTuber/producer Jeff Geerling documented his 4× M3 Ultra Mac Studio cluster (15TB total VRAM) running Qwen3-235B, DeepSeek V3.1 671B, and Kimi K2 Thinking via tensor parallel RDMA over Thunderbolt 5.
-📎 https://www.youtube.com/watch?v=XXXXX [via blog.exolabs.net benchmarks reference]
-
-**[Med] Community Cluster Builds** — Multiple community members published guides on clustering MacBooks/Mac Minis into unified AI inference engines. Notable: a guide on clustering two Macs into an 80B-capable cluster for free.
-📎 https://medium.com/@manjunath.shiva/i-turned-two-macs-into-an-80b-ai-cluster-for-free-exo-is-the-open-source-tool-youve-been-waiting-for-ffa14b8e8dc0
-📎 https://markaicode.com/run-distributed-ai-exo-macbooks/
-
-**[Low] exo Private / Abandonment Rumors Debunked** — HN commenter asked "It's really sad that exo went private." EXO Labs responded: "We have some exciting plans. Keep checking and it won't be long before something pops up." Project remains fully open source.
-📎 https://news.ycombinator.com/item?id=45611912
+### [Med] ToolHalla Publishes EXO Distributed Inference Guide
+A detailed walkthrough for running 70B+ models across multiple GPUs using EXO, aimed at users hitting single-GPU VRAM limits (e.g., RTX 4090 at 24GB).
+- [ToolHalla](https://toolhalla.ai/blog/exo-framework-distributed-inference-guide-2026)
 
 ---
 
-## Technical Updates
+## ⚙️ Technical Updates
 
-### v1.0.70 Release (April 17, 2026) — [High]
+### [High] v1.0.69 Released — Continuous Batching, Qwen3.5, M5 Pro/Max
+Released March 27, 2026. Key additions:
+- **Continuous batching** — better GPU utilization during multi-request inference
+- **Qwen3.5 support** — expanded model compatibility
+- **M5 Pro/Max support** — latest Apple Silicon compatibility
+- UI improvements: fixed custom model add (was requiring two attempts), enlarged sidebar buttons
+- Uses `mlx_generate` to fix occasional warmup bugs (commit 565ed41)
+- [GitHub Release](https://github.com/exo-explore/exo/releases/tag/v1.0.69) | [New Releases summary](https://newreleases.io/project/github/exo-explore/exo/release/v1.0.69)
 
-**Multimodality & Vision:**
-- Vision model support for Qwen3.5, Kimi K2.5, and Gemma 4
-- PDF handling (text + image extraction)
+### [Med] SPARTA: 1000× Communication Reduction for Distributed Training
+Day 12 of the "12 Days" series introduced **SPARTA** (Sparse Parameter Averaging for Reduced-communication Training). Key innovation: only 0.1% of model parameters exchanged between nodes per step → **1,000× reduction in communication** without major performance degradation. Combines with DiLoCo for further gains. Researchers led by Matthew Reed and Mohamed Baioumy. Results validated on NanoGPT (124M). Next: scaling to 48 Mac minis.
+- [Blog post — Day 12](https://blog.exolabs.net/day-12/) | [EXO Gym](https://github.com/exo-explore/gym)
 
-**New Models:**
-- Gemma 4, Minimax M2.7, Qwen3.6 support added
+### [Med] EXO Gym — Distributed Training Simulation Tool
+Released alongside SPARTA. Allows simulating distributed training setups on a single machine for rapid ablation experiments. Includes first community competition.
+- [GitHub: exo-explore/gym](https://github.com/exo-explore/gym) | [Competition form](https://forms.gle/z6kaYtLtdC23uGws7)
 
-**Performance:**
-- Flash Attention for Qwen3.5 and Gemma 4 → **3-6x reduction in peak memory consumption**
-- Memory leak fixes in Rotating and Arrays cache
-- Improved KV prefix cache hit rates
-- KV cache garbage collection on eviction
-
-**API:**
-- One-click setup helpers for OpenCode, n8n, OpenClaw integrations
-- Firefox AI sidebar support in dashboard
-- Stats and usage reporting improvements
-- `EXO_LIBP2P_NAMESPACE` support in macOS app advanced settings (cluster isolation)
-
-**Bug Fixes:**
-- Zombie process / RDMA resource cleanup on shutdown
-- Out-of-order event crashes on startup fixed
-- Thinking parsing drain fix (prevents malformed tool calls)
-
-### v1.0.69 Release (March 27, 2026) — [Med]
-
-- **Continuous batching ON BY DEFAULT** — parallel request processing across single-node and multi-node (including RDMA) clusters
-- Qwen3.5 support, DeepSeek v3.2 default model cards
-- Pipeline parallel prefill 1.98x faster on 2 nodes (chunked prompt, overlapping compute/communication)
-- `--bootstrap-peers` and `--libp2p-port` for static peer discovery (bypasses mDNS)
-- M5 Pro/Max memory monitoring fixed (macmon upgrade)
-- Post `/v1/cancel/{command_id}` endpoint for cancelling generations
-
-### RDMA over Thunderbolt 5 — [High]
-
-- Day-0 support for RDMA over Thunderbolt 5 enabled in macOS 26.2
-- Requires TB5 cables and all devices on same macOS version (including beta)
-- Enable via Recovery mode: `rdma_ctl enable`
-- Active issue: JACCL RDMA crashes on M3 Ultra (errno=2, 60, 22) — recurring in production, issue #1847 open
-📎 https://github.com/exo-explore/exo/issues/1847
-
-### Tensor Parallelism & Performance — [Med]
-
-- 1.8x speedup on 2 devices, 3.2x on 4 devices (tensor parallel)
-- Benchmarks site launched: https://benchmarks.exolabs.net/ with automated transparent benchmarks
-- exo-bench tool supports `--instance-meta` filtering (ring, jaccl, both) and `--sharding` (pipeline, tensor, both)
+### [Med] Disaggregated Prefill/Decode with Layer-by-Layer KV Streaming
+EXO 1.0 automates hardware-aware phase placement: profiles each device for compute throughput, memory bandwidth, and network characteristics, then automatically decides which device handles prefill vs. decode. KV vectors stream layer-by-layer to overlap with computation.
+- [Blog — DGX Spark post](https://blog.exolabs.net/nvidia-dgx-spark/)
 
 ---
 
-## Community Pulse
+## 📡 Community Pulse
 
-**GitHub Activity:**
-- Stars: 43,864 (+~600 since last briefing cycle)
-- Forks: 3,061 | Open issues: 203 | Releases: 15
-- Active contributors: AlexCheema, Evanev7, rltakashige, JakeHillion, cadenmackenzie, blindcrone, ToxicPine
+### [Med] 12 Days of EXO Content Sprint — Complete
+EXO Labs ran a 12-day content series (Dec 2025) covering: DeepSeek V3 on M4 Mac mini cluster, distributed training (DiLoCo → SPARTA), EXO Private Search, Transparent Benchmarks, Edge-Verified ML, Personalised AI Agents, iPhone Mirroring integration, and SPARTA. The series concluded with Day 12 wrapping up the SPARTA research paper.
 
-**HN Discussion:** The DGX Spark + Mac Studio post hit 61 points on HN. Top comments debated prefill vs. decode importance ("enormous number of use cases where prompt is large and output is small"), USB-C networking viability, and whether M5's promised 3.5x TTFT improvement changes the calculus. One commenter noted "M5 has approximately 3.5x-ed TTFT performance compared to M4."
+### [Med] iPhone Mirroring Integration for Personalised AI EXOcortex
+EXO Desktop App (v0.0.3-alpha) integrates iPhone mirroring via macOS to build a "personalised EXOcortex." One click enables screen control; integrations with YouTube history, Netflix viewing data, and X likes already built. Privacy-first — all data stays local.
+- [Blog — Day 11](https://blog.exolabs.net/day-11/)
 
-**Distributed LLM Comparison:** SharedLLM published a comparison of Petals vs Exo vs Kalavai vs SharedLLM (disclosure: author builds SharedLLM).
-📎 https://sharedllm.org/blog/sharedllm-vs-petals-vs-exo.html
-
-**Tooling Coverage:** ToolHalla published a guide on running 70B+ models across multiple GPUs with EXO.
-📎 https://toolhalla.ai/blog/exo-framework-distributed-inference-guide-2026
-
----
-
-## Market Signals
-
-**[Med] M5 Mac Implications for EXO:** Apple's just-released M5 chips claim ~3.5x TTFT improvement over M4, per HN discussion citing Apple's claims. Combined with EXO's tensor parallelism and RDMA, this could significantly change Mac cluster performance economics.
-
-**[Med] BitNet / Ternary Models as Next Frontier:** EXO's Day 4 post explored BitNet (ternary weights: -1/0/+1, ~1.58 bits per weight) as the future of hardware-agnostic AI. A 7B BitNet fits in 1.38GB; 100B runs at human reading speed on a single CPU. EXO plans to train a larger BitNet model in 2025.
-
-**[Low] Enterprise Interest:** EXO main site now lists sales@exolabs.net for enterprise inquiries. Hybrid DGX Spark + Mac Studio setup positions EXO for enterprise AI部署.
+### [Med] Open GitHub Issues: RDMA and Multi-Node
+Notable open issues:
+- **#1066** — RDMA crashes in `ibv_reg_mr`; 404 API responses for failed instances; network profile switching disrupts connectivity (author: @Geelhem)
+- **#1826** — Two Macs RDMA loading Kimi K2.5 fails: `mlx_item evaluation timed out` (author: @ulope, opened Apr 1)
+- **#1459** — No valid Tensor + RDMA configuration for 3 nodes (author: @jami3f)
+- **#1325** — Multi-node inference panic on M3 Ultra 4-node cluster (closed — not planned)
 
 ---
 
-## Trends
+## 🌍 Market Signals
 
-1. **Disaggregated Inference** — Prefill/decode separation (DGX Spark for compute, Mac Studio for memory bandwidth) is maturing as a pattern. EXO automates this.
-2. **MoE Dominance** — DeepSeek V3's strong performance on Apple Silicon clusters reinforces MoE as the architecture of choice for memory-constrained setups.
-3. **Multimodality Goes Local** — v1.0.70's vision model support brings image understanding to local clusters.
-4. **RDMA Maturation** — Thunderbolt 5 RDMA is now day-0 supported, but reliability issues on M3 Ultra (issue #1847) need resolution before production RDMA clusters are frictionless.
-5. **Continuous Batching Default** — v1.0.69 turned on continuous batching by default, materially improving multi-request throughput for agentic workflows.
+### [Med] AppleInsider Forum: "Giant Mac mini cluster powers Overcast podcast transcripts without the cloud"
+Active discussion on the Overcast 48-Mac mini cluster. While Overcast uses Apple's built-in speech recognition (not EXO directly), it demonstrates the viability of large Apple Silicon clusters for AI workloads — relevant to EXO's target market.
+- [AppleInsider Forum](https://forums.appleinsider.com/discussion/243969)
+
+### [Med] Exo Labs Media Room — Newswire
+EXO Labs maintaining active press presence via Newswire. Jan 24 release promoted app download and GitHub (Apache 2.0).
+- [Exo Labs Newswire](https://exolabs.newswire.com/)
 
 ---
 
-## Resources
+## 📊 Trends
+
+| Signal | Status |
+|---|---|
+| GitHub stars | 43.3k (up from ~43k, +0.3k trend) |
+| Forks | 2,983 |
+| Open issues | 174 |
+| Latest release | v1.0.69 (Mar 27, 2026) |
+| Content activity | "12 Days of EXO" just completed |
+| RDMA issues | Active, some unresolved — user impact |
+| Apple Silicon momentum | M4 Mac mini clusters, M5 Pro/Max, Thunderbolt 5 preview |
+| Hybrid Apple+NVIDIA | DGX Spark + Mac Studio demo is a first |
+
+---
+
+## 🔗 Key Links
 
 - **GitHub:** https://github.com/exo-explore/exo
 - **Blog:** https://blog.exolabs.net/
-- **Benchmarks:** https://benchmarks.exolabs.net/
+- **Latest Release:** https://github.com/exo-explore/exo/releases/tag/v1.0.69
+- **EXO Gym:** https://github.com/exo-explore/gym
 - **Discord:** https://discord.gg/EUnjGpsmWw
-- **macOS App (v1.0.70):** https://assets.exolabs.net/EXO-latest.dmg
+- **X/Twitter:** https://x.com/exolabs
 
 ---
 
-*Compiled 2026-04-21 05:10 UTC. Confidence tags: [High] = confirmed from primary sources, [Med] = corroborated from multiple sources, [Low] = single source or extrapolation.*
+*Compiled 2026-04-22 05:07 UTC. Sources: GitHub, blog.exolabs.net, Hacker News, AppleInsider, PCMag, ToolHalla, Newswire.*
